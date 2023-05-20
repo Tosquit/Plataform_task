@@ -1,0 +1,25 @@
+
+header{
+    background-color: rgb(102, 104, 104);
+}
+h2{
+    text-align: center;
+  }
+  
+body{
+    background-image: url("back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+section{
+    background-color: rgba(248, 248, 248, 0.8); /* Fondo trasparente */
+    border: 1px solid black; /* Borde negro */
+    padding: 20px 0;
+    text-align: center;
+    margin: 20px; /* Márgenes de 20px en todos los lados */ 
+}
+p{
+    margin: 10px;
+    text-align: center;
+}
+  

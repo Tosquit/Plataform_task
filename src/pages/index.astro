@@ -1,0 +1,32 @@
+---
+import HeaderSimple from '../layouts/Header.astro';
+import FooterSimple from '../layouts/footer.astro';
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+</head>
+<HeaderSimple></HeaderSimple>
+    <section>
+      <h2>Sobre nosotros</h2>
+      <p>Somos una comunidad dedicada al arte en todas sus formas: pintura, escultura, música, danza y más. Nuestra página ha sido creada con el objetivo de ser un espacio virtual para compartir y apreciar el arte.</p>
+    </section>
+    <section>
+      <h2>Nuestro Propósito</h2>
+      <p>Nos enorgullece promover la creatividad y la expresión artística. A través de nuestra plataforma, esperamos brindar un lugar de inspiración, intercambio de ideas y apoyo para artistas emergentes y establecidos.</p>
+    </section>
+    <section>
+      <h2>Explora el Arte</h2>
+      <p>Descubre obras de arte únicas, lee entrevistas con artistas destacados, participa en concursos y exposiciones virtuales, y encuentra eventos culturales cerca de ti. ¡El arte está a tu alcance!</p>
+    </section>
+<FooterSimple></FooterSimple>
+</html>
+<style>
+  section:hover {
+      transform: scale(0.8);
+      transition: all 0.5s;
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+const{image, title}=Astro.props;
+---
+<!DOCTYPE html>
+<html>
+  <body>
+<div class="container">
+    <title>{title}</title>
+    <img id="imageChange" class="image" src={image}>
+    <div class="text">
+        <slot />
+    </div>
+</div>
+</body>
+</html>
+<script src="./script.js"> </script>
+<style>
+ .container {
+  display: flex;
+  align-items: center;
+}
+.h2{
+  text-align: center;
+}
+.image {
+  width: 300px; 
+  border: 20px solid rgb(255, 123, 0);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+.text {
+  margin-left: 20px; /* Espacio entre la imagen y el texto */
+  margin-right: 20px;
+  text-align:justify;
+}
+body {
+        background-image: url('https://fondosmil.com/fondo/17559.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+
