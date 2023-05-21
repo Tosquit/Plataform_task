@@ -6,7 +6,10 @@ const{image, title}=Astro.props;
   <body>
 <div class="container">
     <title>{title}</title>
+  <figure>
     <img id="imageChange" class="image" src={image}>
+    <figcaption>Click me </figcaption>
+      </figure>
     <div class="text">
         <slot />
     </div>
