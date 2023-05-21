@@ -3,7 +3,7 @@
 ```
 npm create astro@latest -- --template basics
 ```
-[![Open in Vercel]](https://plataform-task.vercel.app/)
+[:art:[Open in Vercel]:art:](https://plataform-task.vercel.app/)
 
 ## 🚀 Project Structure
 
