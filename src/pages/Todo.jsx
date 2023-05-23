@@ -16,8 +16,8 @@ function TodoList(){
   const addTodo = (event)=>{
     event.preventDefault();
     const what = inputRef.current.value;
-    setTodos([{what, done: flase}]);
-  }
+    setTodos((oldTodos)=>[...oldTodos,{what, done: false}]);
+  };
   return(
     <div className="todo-list">
       < form onSubmit={addTodo}>
@@ -30,7 +30,7 @@ function TodoList(){
         ))}
       </ul>
     </div>
-  )
+  );
 }
 
 export default TodoList;
