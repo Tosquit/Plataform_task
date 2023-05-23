@@ -1,6 +1,6 @@
 ## 📗 My Html with astro 📗
 
-[![:art::art: **Open Vercel**](https://github-readme-svg.vercel.app)](https://plataform-task.vercel.app/)
+[![:art::art: **Open Vercel**](https://raw.githubusercontent.com/abumalick/powered-by-vercel/master/powered-by-vercel.svg)](https://plataform-task.vercel.app/)
 
 [![Open in Github CodeSpaces](https://github.com/codespaces/badge.svg)](https://tosquit-literate-waffle-65jxp7gvrrwf5pv5.github.dev/)
 
