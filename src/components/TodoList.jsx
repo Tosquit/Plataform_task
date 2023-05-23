@@ -1,9 +1,12 @@
 import React, { useRef, useState } from "react";
+import './liststyle.css'
 
 const fakeTodos = [
-  { what: "Study Rust", done: false },
-  { what: "Grade some tasks", done: false },
-  { what: "Buy a Tesla", done: true },
+  { what: "Mirar cuadro Guernica", done: false },
+  { what: "Mirar cuadro La monsa lisa", done: false },
+  { what: "Mirar cuadro La Noche estrellada", done: false},
+  { what: "Visitar la tienda de recuerdos", done: false },
+
 ];
 
 const TodoItem = ({ todo, onClick }) => (
@@ -15,7 +18,7 @@ const TodoItem = ({ todo, onClick }) => (
 
 function TodoList() {
   const inputRef = useRef();
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(fakeTodos);
 
   const addTodo = (event) => {
     event.preventDefault(); // Prevent the brower from reloading because of the form
@@ -33,7 +36,7 @@ function TodoList() {
     setTodos((oldTodos) =>
       oldTodos.map((todo, i) => {
         if (index === i) return { ...todo, done: !todo.done };
-        return todo;
+      return todo;
       })
     );
   };
@@ -47,7 +50,7 @@ function TodoList() {
     <div className="todo-list">
       <form onSubmit={addTodo}>
         <input type="text" ref={inputRef} />
-        <button>Add Todo</button>
+        <button className="insert">Inserta tus Todo</button>
       </form>
       <ul>
         {todos.map((todo, index) => (
@@ -59,8 +62,8 @@ function TodoList() {
           />
         ))}
       </ul>
-      <button onClick={removeChecked}>Remove Checked</button>
-      <button onClick={removeAll}>Remove All</button>
+      <button onClick={removeChecked}>Eliminar Checked</button>
+      <button onClick={removeAll}>Eliminar All</button>
     </div>
   );
 }
