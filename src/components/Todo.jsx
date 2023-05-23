@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { useRef,useState } from 'react';
 
 const fakeTodos=[
   {what:"Study",done:false}
 ];
-const TodoItem=({todo})=> <li className='todo-item'>
+const TodoItem=({todo, onClick})=> 
+  <li className="todo-item" onClick={onClick}>
   <input type="checkbox" checked={todo.done}/>
   <span className={"what" + (todo.done ? " done ": "")}>
     {todo.what}
