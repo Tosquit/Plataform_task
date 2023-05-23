@@ -17,8 +17,10 @@ function TodoList(){
   const addTodo = (event)=>{
     event.preventDefault();
     const what = inputRef.current.value;
-    setTodos((oldTodos)=>[...oldTodos,{what, done: false}]);
-    
+    if(what) {
+      setTodos((oldTodos)=>[...oldTodos,{what, done: false}]);
+      inputRef.current.value ="";
+    }
   };
   return(
     <div className="todo-list">
@@ -28,7 +30,7 @@ function TodoList(){
       </form>
       <ul>
         {todos.map((todo)=>(
-          <TodoItem todo={todo}/>
+          <TodoItem key={`${index}-${todo.what}`} todo={todo}/>
         ))}
       </ul>
     </div>
