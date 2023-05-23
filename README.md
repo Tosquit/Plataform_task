@@ -2,6 +2,8 @@
 
 [:art::art: **Open Vercel**](https://plataform-task.vercel.app/)
 
+[![Open in Github CodeSpaces](https://tosquit-literate-waffle-65jxp7gvrrwf5pv5.github.dev/)]
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
