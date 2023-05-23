@@ -5,11 +5,12 @@ const fakeTodos=[
 const TodoItem=({todo})=> <li className='todo-item'>
   <input type="checkbox" checked={todo.done}/>
   <span className={"what" + (todo.done ? " done ": "")}>
-  {todo.what}
+    {todo.what}
   </span>
 </li>
 
 function TodoList(){
+  const inputRef = useRef();
   const [todos,setTodos]= useState(fakeTodos);
 
   const addTodo = (event)=>{
