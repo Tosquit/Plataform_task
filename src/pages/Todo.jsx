@@ -15,6 +15,8 @@ function TodoList(){
 
   const addTodo = (event)=>{
     event.preventDefault();
+    const what = inputRef.current.value;
+    setTodos([{what, done: flase}]);
   }
   return(
     <div className="todo-list">
