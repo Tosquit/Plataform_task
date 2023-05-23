@@ -1,8 +1,8 @@
 ---
-import Todo from '../components/Todo.jsx'
+import Todo from '../components/TodoList.jsx'
 import FooterSimple from '../layouts/footer.astro';
 import HeaderSimple from '../layouts/Header.astro';
 ---
 <HeaderSimple></HeaderSimple>
-
+<Todo client:load></Todo>
 <FooterSimple></FooterSimple>

@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import "./TodoList.css";
 
 const fakeTodos = [
   { what: "Study Rust", done: false },
