@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 
 const fakeTodos=[
   {what:"Study",done:false}
@@ -17,11 +18,12 @@ function TodoList(){
     event.preventDefault();
     const what = inputRef.current.value;
     setTodos((oldTodos)=>[...oldTodos,{what, done: false}]);
+    
   };
   return(
     <div className="todo-list">
       < form onSubmit={addTodo}>
-          <input tyoe="text"/>
+          <input tyoe="text" ref={inputRef}/>
           <button>Add Todo</button>
       </form>
       <ul>
