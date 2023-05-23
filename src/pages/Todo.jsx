@@ -1,6 +1,4 @@
----
-import './todo.css'
----
+
 const fakeTodos=[
   {what:"Study",done:false}
 ];
