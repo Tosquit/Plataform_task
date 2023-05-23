@@ -23,7 +23,7 @@
 .todo-list .todo-item .what {
   margin-left: .6em;
 }
-.insert {
+.insert{
   display: inline-block;
   border: none;
   padding: 10px 20px;
@@ -35,8 +35,45 @@
   color: #FFFFFF;
   border-radius: 6px;
   transition: background-color 0.3s ease;
+  left: 30%;
+  position:relative;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .insert:hover {
   background-color: #45a049;
+}
+
+.addtext {
+  display: inline-block;
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #4CAF50;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  left: 30%;
+  position:relative;
+}
+.addtext:focus {
+  outline: none;
+  border-color: #45a049;
+}
+
+.del{
+  display: inline-block;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #af844c;
+  color: #FFFFFF;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  left: 25%;
+  position: relative;
+  margin-left: 5%;
 }

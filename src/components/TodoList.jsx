@@ -1,12 +1,11 @@
-import React, { useRef, useState } from "react";
-import './liststyle.css'
+import React, { useRef, useState, useEffect } from "react";
+import "./liststyle.css";
 
 const fakeTodos = [
   { what: "Mirar cuadro Guernica", done: false },
   { what: "Mirar cuadro La monsa lisa", done: false },
-  { what: "Mirar cuadro La Noche estrellada", done: false},
+  { what: "Mirar cuadro La Noche estrellada", done: false },
   { what: "Visitar la tienda de recuerdos", done: false },
-
 ];
 
 const TodoItem = ({ todo, onClick }) => (
@@ -18,14 +17,26 @@ const TodoItem = ({ todo, onClick }) => (
 
 function TodoList() {
   const inputRef = useRef();
-  const [todos, setTodos] = useState(fakeTodos);
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    // Recuperar los todos del localStorage cuando se carga el componente
+    const savedTodos = localStorage.getItem("todos");
+    if (savedTodos) {
+      setTodos(JSON.parse(savedTodos));
+    } else {
+      setTodos(fakeTodos);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Guardar los todos en el localStorage cuando cambian
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = (event) => {
-    event.preventDefault(); // Prevent the brower from reloading because of the form
+    event.preventDefault();
     const what = inputRef.current.value;
-    // 1. We have to create a **new** array
-    // 2. We have to pass a function to setTodos because we need to use the oldTodos,
-    //    and only React can give us the most recent version.
     if (what) {
       setTodos((oldTodos) => [...oldTodos, { what, done: false }]);
       inputRef.current.value = "";
@@ -36,7 +47,7 @@ function TodoList() {
     setTodos((oldTodos) =>
       oldTodos.map((todo, i) => {
         if (index === i) return { ...todo, done: !todo.done };
-      return todo;
+        return todo;
       })
     );
   };
@@ -49,12 +60,11 @@ function TodoList() {
   return (
     <div className="todo-list">
       <form onSubmit={addTodo}>
-        <input type="text" ref={inputRef} />
+        <input className="addtext" type="text" ref={inputRef} />
         <button className="insert">Inserta tus Todo</button>
       </form>
       <ul>
         {todos.map((todo, index) => (
-          // The key has to be a unique identifier for the todo item...
           <TodoItem
             key={todo.what}
             todo={todo}
@@ -62,8 +72,12 @@ function TodoList() {
           />
         ))}
       </ul>
-      <button onClick={removeChecked}>Eliminar Checked</button>
-      <button onClick={removeAll}>Eliminar All</button>
+      <button className="del" onClick={removeChecked}>
+        Eliminar Checked
+      </button>
+      <button className="del" onClick={removeAll}>
+        Eliminar All
+      </button>
     </div>
   );
 }
