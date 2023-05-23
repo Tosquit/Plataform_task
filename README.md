@@ -2,7 +2,7 @@
 
 [:art::art: **Open Vercel**](https://plataform-task.vercel.app/)
 
-[![Open in Github CodeSpaces](https://tosquit-literate-waffle-65jxp7gvrrwf5pv5.github.dev/)]
+[![Open in Github CodeSpaces](https://github.com/codespaces/badge.svg)]
 
 ## 🚀 Project Structure
 
